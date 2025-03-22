@@ -3,6 +3,8 @@ package com.phamthanhlong.identity_service.service;
 import com.phamthanhlong.identity_service.dto.request.UserCreationRequest;
 import com.phamthanhlong.identity_service.dto.request.UserUpdateRequest;
 import com.phamthanhlong.identity_service.entity.User;
+import com.phamthanhlong.identity_service.exception.ErorrCode;
+import com.phamthanhlong.identity_service.exception.UserException;
 import com.phamthanhlong.identity_service.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,10 @@ public class UserService {
 
     public User createUser(UserCreationRequest request) {
         User user = new User();
+
+        if(userRepository.existsByUsername(request.getUsername()))
+            throw new UserException(ErorrCode.USER_EXSITED);
+
 
         user.setUsername(request.getUsername());
         user.setDob(request.getDob());
@@ -32,7 +38,7 @@ public class UserService {
 
     public User showUser(String id) {
         return userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException(("User not found")));
+                .orElseThrow(() -> new UserException(ErorrCode.USER_NOTFOUND));
     }
 
     public User updateUser(String userId,UserUpdateRequest request){
