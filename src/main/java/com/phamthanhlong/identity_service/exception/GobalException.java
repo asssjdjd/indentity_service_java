@@ -20,7 +20,7 @@ public class GobalException {
         return ResponseEntity.badRequest().body(apiResponse);
     }
 
-    @ExceptionHandler(value = RuntimeException.class)
+    @ExceptionHandler(value = UserException.class)
     ResponseEntity<ApiResponse> handlingUserException(UserException exception) {
         ApiResponse apiResponse = new ApiResponse();
         ErorrCode erorrCode = exception.getErorrCode();

@@ -4,7 +4,8 @@ public enum ErorrCode {
     RUNTIME_EXCEPTION(9999,"runtime exception"),
     USER_EXSITED(1002, "User exited"),
     VALIDATION(1003, "invalid type input"),
-    USER_NOTFOUND(1004,"not found user")
+    USER_NOTFOUND(1004,"not found user"),
+    USERNOT_EXISTED(1005,"user not exit"),
     ;
     private int code;
     private String message;
