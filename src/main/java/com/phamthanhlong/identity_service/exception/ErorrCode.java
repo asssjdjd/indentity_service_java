@@ -6,6 +6,7 @@ public enum ErorrCode {
     VALIDATION(1003, "invalid type input"),
     USER_NOTFOUND(1004,"not found user"),
     USERNOT_EXISTED(1005,"user not exit"),
+    UNAUTHENTICATED(1006,"unauthenticated"),
     ;
     private int code;
     private String message;
