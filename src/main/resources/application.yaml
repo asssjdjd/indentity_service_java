@@ -19,5 +19,10 @@ spring:
 jwt:
   signerKey: "d+cNWwyPpTw3HwhOJWXtJ8ZbiVUTFdwfGdVXigHmMbafFr83Gm43VFBnMZIH0OU0"
 
+logging:
+  level:
+    root: INFO           # Hoặc WARN, ERROR, v.v... tuỳ bạn muốn
+    org.springframework.security: DEBUG
+
 
 
