@@ -1,9 +1,10 @@
 package com.phamthanhlong.identity_service.dto.request;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.time.LocalDate;
 
 @Data
 @Builder
@@ -15,5 +16,6 @@ public class UserUpdateRequest {
     private String firstname;
     private String lastname;
     private LocalDate dob;
-
+    //    them roles
+    List<String> roles;
 }

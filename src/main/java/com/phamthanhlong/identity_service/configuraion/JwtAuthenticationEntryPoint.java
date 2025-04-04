@@ -1,22 +1,24 @@
 package com.phamthanhlong.identity_service.configuraion;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.phamthanhlong.identity_service.dto.response.ApiResponse;
-import com.phamthanhlong.identity_service.exception.ErorrCode;
+import java.io.IOException;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import org.springframework.http.MediaType;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
-import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.phamthanhlong.identity_service.dto.response.ApiResponse;
+import com.phamthanhlong.identity_service.exception.ErorrCode;
 
-public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint{
+public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
     @Override
-    public void commence(HttpServletRequest request, HttpServletResponse response,  AuthenticationException authException)
+    public void commence(
+            HttpServletRequest request, HttpServletResponse response, AuthenticationException authException)
             throws IOException, ServletException {
 
         ErorrCode errorCode = ErorrCode.UNAUTHENTICATED;
@@ -35,6 +37,4 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint{
 
         response.flushBuffer(); // commit response
     }
-
-
 }

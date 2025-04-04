@@ -1,6 +1,6 @@
 package com.phamthanhlong.identity_service.exception;
 
-public class UserException extends RuntimeException{
+public class UserException extends RuntimeException {
 
     public UserException(ErorrCode erorrCode) {
         super(erorrCode.getMessage()); // lay phan runtimeException va thay no bang errorCode

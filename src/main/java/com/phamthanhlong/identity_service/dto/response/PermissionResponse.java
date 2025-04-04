@@ -1,13 +1,14 @@
-package com.phamthanhlong.identity_service.dto.request;
+package com.phamthanhlong.identity_service.dto.response;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class IntrospeactRequest {
-    String token;
+public class PermissionResponse {
+    String name;
+    String description;
 }

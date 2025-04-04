@@ -1,11 +1,11 @@
 package com.phamthanhlong.identity_service.dto.request;
 
-import jakarta.validation.constraints.*;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.*;
+
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Data
 @NoArgsConstructor
@@ -18,7 +18,7 @@ public class UserCreationRequest {
     @Pattern(regexp = "^\\S+$", message = "Username must not contain spaces")
     String username;
 
-    @Size(min = 8,message = "password don't allow lest 8 characters")
+    @Size(min = 8, message = "password don't allow lest 8 characters")
     String password;
 
     String firstname;
@@ -26,7 +26,6 @@ public class UserCreationRequest {
 
     LocalDate dob;
 
-//    public UserCreationRequest() {}
-
+    //    public UserCreationRequest() {}
 
 }
