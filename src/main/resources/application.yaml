@@ -18,6 +18,8 @@ spring:
 
 jwt:
   signerKey: "d+cNWwyPpTw3HwhOJWXtJ8ZbiVUTFdwfGdVXigHmMbafFr83Gm43VFBnMZIH0OU0"
+  valid-duration: 20  # in second
+  refreshable-duration : 120
 
 logging:
   level:
